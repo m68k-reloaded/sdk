@@ -1,4 +1,4 @@
-use m68k_reloaded_parser::parse;
+// use m68k_reloaded_parser::parse;
 use m68k_reloaded_scanner::{scan, Token};
 
 fn main() {
