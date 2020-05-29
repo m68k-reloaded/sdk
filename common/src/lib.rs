@@ -1,3 +1,4 @@
+pub mod cursor;
 pub mod errors;
 
 pub type Byte = u8;

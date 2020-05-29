@@ -1,5 +1,5 @@
 use crate::Range;
-pub use collector::Collector;
+pub use collector::ErrorCollector;
 pub use severity::Severity;
 
 mod collector;
