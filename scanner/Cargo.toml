@@ -1,0 +1,17 @@
+[package]
+name = "m68k_reloaded_scanner"
+version = "0.1.0"
+authors = ["Marcel Garus <marcel.garus@gmail.com>"]
+edition = "2018"
+
+[lib]
+name = "m68k_reloaded_scanner"
+path = "src/lib.rs"
+
+[[bin]]
+name = "scanner"
+path = "src/main.rs"
+
+[dependencies]
+unicode-segmentation = "1.6.0"
+m68k_reloaded_common = { path = "../common" }
