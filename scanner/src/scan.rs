@@ -1,7 +1,7 @@
 use crate::token::{Range, Token};
-use m68k_reloaded_common::errors::{Collector, Error};
+use m68k_reloaded_common::errors::{Error, ErrorCollector};
 
-pub fn scan<'s, 'e>(source: &'s str, errors: &'e mut Collector) -> Scanner<'s, 'e> {
+pub fn scan<'s, 'e>(source: &'s str, errors: &'e mut ErrorCollector) -> Scanner<'s, 'e> {
     Scanner {
         offset: 0,
         rest: source,
@@ -17,7 +17,7 @@ pub struct Scanner<'s, 'e> {
     offset: usize,
     /// The cursor relative to the offset.
     cursor: usize,
-    errors: &'e mut Collector,
+    errors: &'e mut ErrorCollector,
 }
 
 impl<'s> Scanner<'s, '_> {
@@ -236,7 +236,7 @@ mod tests {
     }
 
     fn expect_scanned_tokens(source: &str, expected_tokens: Vec<&Token>) {
-        let mut errors = Default::default();
+        let mut errors: Vec<Error> = Default::default();
         let tokens: Vec<Token> = scan(source, &mut errors).collect();
 
         errors.print();

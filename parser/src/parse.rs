@@ -1,5 +1,5 @@
 use crate::statements::*;
-use m68k_reloaded_common::errors::{Collector, Error};
+use m68k_reloaded_common::errors::{Error, ErrorCollector};
 use m68k_reloaded_common::Range;
 use m68k_reloaded_scanner::Token;
 use std::mem;
